@@ -9,19 +9,27 @@ package pidev.entities;
  *
  * @author ADMIN
  */
-public class Responsable_Association extends User {
-    String information;
+public class User {
+    protected int id;
 
-    public Responsable_Association() {
+    public User() {
     }
 
-    public Responsable_Association(int id ,String information) {
-        super(id);
-        this.information = information;
+    public User(int id) {
+        this.id = id;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     
     
-     
+    
     
     
 }
