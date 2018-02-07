@@ -99,4 +99,12 @@ public class Association_Services {
         return Liste;
     
 }
+    //on peut supprimer une association pour de raison d'inactivité ou d'autres exemples
+    public void deleteAssociation(int id) throws SQLException{
+    String req="delete from association where id=?";
+    pst=cnx.prepareStatement(req);
+    pst.setInt(1, id);
+    pst.executeUpdate();
+    
+    }
 }

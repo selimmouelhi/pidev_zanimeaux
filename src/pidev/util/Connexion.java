@@ -15,17 +15,18 @@ import java.sql.SQLException;
  */
 public class Connexion {
     
-       Connection cnx = null;
+       
     final String url = "jdbc:mysql://localhost:3306/pidev_zanimaux";
     final String user = "root";
     final String password = "";
     static Connexion instance = null;
+    Connection cnx = null;
     
     private Connexion(){
         try{
             cnx = DriverManager.getConnection(url, user, password);
         }catch(SQLException e){
-            System.out.println(e);
+            System.out.println("connexion failed");
         }
     }
     
