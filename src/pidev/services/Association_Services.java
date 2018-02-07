@@ -74,7 +74,7 @@ public class Association_Services {
                     rs.getString(5),
                     rs.getDate(6),rs.getInt(7)
             );
-            A.toString();
+            System.out.println(A);
         }
         
     }
