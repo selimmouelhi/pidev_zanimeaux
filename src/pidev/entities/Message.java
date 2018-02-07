@@ -14,8 +14,8 @@ import java.util.Date;
 public class Message {
     
    int id;
-   User sender;
-   User receiver;
+   int IDsender;
+   int IDreceiver;
    String contenu;
    String objet ;
    Date date;
@@ -23,10 +23,10 @@ public class Message {
     public Message() {
     }
 
-    public Message(int id, User sender, User receiver, String contenu, String objet, Date date) {
+    public Message(int id, int IDsender, int IDreceiver, String contenu, String objet, Date date) {
         this.id = id;
-        this.sender = sender;
-        this.receiver = receiver;
+        this.IDsender = IDsender;
+        this.IDreceiver = IDreceiver;
         this.contenu = contenu;
         this.objet = objet;
         this.date = date;
@@ -40,20 +40,20 @@ public class Message {
         this.id = id;
     }
 
-    public User getSender() {
-        return sender;
+    public int getIDsender() {
+        return IDsender;
     }
 
-    public void setSender(User sender) {
-        this.sender = sender;
+    public void setIDsender(int IDsender) {
+        this.IDsender = IDsender;
     }
 
-    public User getReceiver() {
-        return receiver;
+    public int getIDreceiver() {
+        return IDreceiver;
     }
 
-    public void setReceiver(User receiver) {
-        this.receiver = receiver;
+    public void setIDreceiver(int IDreceiver) {
+        this.IDreceiver = IDreceiver;
     }
 
     public String getContenu() {
@@ -82,8 +82,8 @@ public class Message {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + this.id;
+        int hash = 3;
+        hash = 97 * hash + this.id;
         return hash;
     }
 
@@ -107,8 +107,12 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" + "id=" + id + ", sender=" + sender + ", receiver=" + receiver + ", contenu=" + contenu + ", objet=" + objet + ", date=" + date + '}';
+        return "Message{" + "id=" + id + ", IDsender=" + IDsender + ", IDreceiver=" + IDreceiver + ", contenu=" + contenu + ", objet=" + objet + ", date=" + date + '}';
     }
+    
+    
+    
+    
    
    
    
