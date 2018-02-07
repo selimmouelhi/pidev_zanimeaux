@@ -17,7 +17,7 @@ import pidev.util.Connexion;
 public class Evenments_Services {
     ResultSet rs;
     PreparedStatement pst;
-    Connexion cnx= Connexion.getInstance().getConnexion();
+    
     
     //Responsable peut ajouter un evenment
     public void ajouterEvenment(Evenment E)

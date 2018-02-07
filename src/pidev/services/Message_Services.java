@@ -16,7 +16,7 @@ import pidev.util.Connexion;
  */
 public class Message_Services {
     
-    Connexion cnx= Connexion.getInstance().getConnexion();
+    
     PreparedStatement pst;
     ResultSet rs;
     //ajout de message est fait par toute utilisateur apar l'admin

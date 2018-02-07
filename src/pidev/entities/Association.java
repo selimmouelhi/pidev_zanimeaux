@@ -14,7 +14,7 @@ import java.sql.Date;
 public class Association {
     
     int id;
-    Responsable_Association Responsable;
+    int idR;
     String info;
     String  adresse ;
     String nom;
@@ -23,9 +23,9 @@ public class Association {
     public Association ()
     {}
 
-    public Association(int id, Responsable_Association Responsable, String info, String adresse, String nom, Date date_creation, int tel) {
+    public Association(int id,int idR, String info, String adresse, String nom, Date date_creation, int tel) {
         this.id = id;
-        this.Responsable = Responsable;
+        this.idR=idR;
         this.info = info;
         this.adresse = adresse;
         this.nom = nom;
@@ -42,13 +42,15 @@ public class Association {
         this.id = id;
     }
 
-    public Responsable_Association getResponsable() {
-        return Responsable;
+    public int getIdR() {
+        return idR;
     }
 
-    public void setResponsable(Responsable_Association Responsable) {
-        this.Responsable = Responsable;
+    public void setIdR(int idR) {
+        this.idR = idR;
     }
+
+    
 
     public String getInfo() {
         return info;
@@ -92,7 +94,7 @@ public class Association {
 
     @Override
     public String toString() {
-        return "Association{" + "id=" + id + ", Responsable=" + Responsable + ", info=" + info + ", adresse=" + adresse + ", nom=" + nom + ", date_creation=" + date_creation + ", tel=" + tel + '}';
+        return "Association{" + "id=" + id + ", id responsable=" + idR + ", info=" + info + ", adresse=" + adresse + ", nom=" + nom + ", date_creation=" + date_creation + ", tel=" + tel + '}';
     }
 
     @Override
