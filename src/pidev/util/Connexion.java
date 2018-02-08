@@ -8,44 +8,33 @@ package pidev.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author ADMIN
  */
 public class Connexion {
-    String url="jdbc:mysql://127.0.0.1:3306/esprit"; //achanger selon notre base de données
-     String login="root";
-     String password="root";
-     static Connection cnx;
-     static Connexion conn;
-     
-     private Connexion () throws SQLException
-     {  
-          try{
-    cnx =DriverManager.getConnection(url, login, password);
-     }catch(SQLException ex)
-     {
-         System.out.println("connexion failed");
-         
-        }
     
-     }
-     //retourner conn
-     public Connexion getConnexion()
-     {  return conn;
-     }
-     //methode getInstance selon design pattern singleton
-     public static Connexion getInstance() {
-         if(conn==null)
-         {   try {
-             conn=new Connexion();
-             } catch (SQLException ex) {
-                 Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-             }
-         }
-     return conn;
-     }
+       
+    final String url = "jdbc:mysql://localhost:3306/pidev_zanimaux";
+    final String user = "root";
+    final String password = "";
+    static Connexion instance = null;
+    Connection cnx = null;
+    
+    private Connexion(){
+        try{
+            cnx = DriverManager.getConnection(url, user, password);
+        }catch(SQLException e){
+            System.out.println("connexion failed");
+        }
+    }
+    
+    public static Connexion getInstance(){
+        return (instance == null ? instance = new Connexion() : instance);
+    }
+    
+    public Connection getConnexion(){
+        return this.cnx;
+    }
 }
